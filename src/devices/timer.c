@@ -100,6 +100,7 @@ timer_sleep (int64_t ticks)
   sema_down(&sleep_sema);
   printf("In timer_sleep :%d\n",cur->wake_time);
   insert_sleep_list(cur);
+  printf("After Inserting");
   sema_up(&sleep_sema);
   thread_block();
   //finish up
